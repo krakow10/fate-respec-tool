@@ -1,4 +1,4 @@
-//! `fate-save-editor` — refund all allocated skill and stat points in a FATE `.FFD` save.
+//! `fate-respec` — refund all allocated skill and stat points in a FATE `.FFD` save.
 //!
 //! Reads a character save file, sets all 15 skill values to 0, resets the four
 //! main stats (strength, dexterity, vitality, magic) to their baselines, and
@@ -16,7 +16,7 @@
 //! defense for the game-version auto-detection.
 //!
 //! Usage:
-//!   fate-save-editor <input.FFD> <output.FFD> [--version auto|fate|traitorsoul]
+//!   fate-respec <input.FFD> <output.FFD> [--version auto|fate|traitorsoul]
 //!                     [--stat-baseline strength,dexterity,vitality,magic]
 
 use std::env;
@@ -81,7 +81,7 @@ const SKILL_MAX: i32 = 9999;
 const STAT_MAX: i32 = 9999;
 
 const USAGE: &str = "\
-usage: fate-save-editor <input.FFD> <output.FFD>
+usage: fate-respec <input.FFD> <output.FFD>
        [--version auto|fate|traitorsoul]
        [--stat-baseline strength,dexterity,vitality,magic]
 
@@ -644,4 +644,3 @@ fn write_i32_at(data: &mut [u8], offset: usize, value: i32) -> Result<(), String
     bytes.copy_from_slice(&value.to_le_bytes());
     Ok(())
 }
-       
