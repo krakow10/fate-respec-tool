@@ -34,4 +34,10 @@ cargo build --release
 The binary is at `target\release\fate-respec.exe` and is used exactly as
 above.
 
+## Credits
+
+The `.FFD` format and respec logic were developed using
+[fate-save-editor](https://github.com/Leirach/fate-save-editor) by
+[Leirach](https://github.com/Leirach) as a reference — thank you!
+
 *Code generated with the Qwen 3.8 27B model.*
